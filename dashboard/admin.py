@@ -32,3 +32,7 @@ class DeviceAdmin(admin.ModelAdmin, ExportCsvMixin):
 
 admin.site.register(Action, ActionAdmin)
 admin.site.register(Device, DeviceAdmin)
+
+admin.site.site_header = "Devices Tracking"
+admin.site.site_title = "Devices Tracking Dashboard"
+admin.site.site_header = "Welcome to Devices Tracking Dashboard"

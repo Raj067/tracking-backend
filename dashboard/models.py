@@ -13,7 +13,7 @@ class Device(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __init__(self) -> None:
+    def __str__(self):
         return f"{self.device_name}"
 
     class Meta:
@@ -30,7 +30,7 @@ class Action(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __init__(self) -> None:
+    def __str__(self):
         return f"{self.action}"
 
     class Meta:
