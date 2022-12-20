@@ -7,7 +7,7 @@ urlpatterns = [
     path('get-device-types/', get_device_types, name="get_device_types"),
     path('get-possible-actions/', get_possible_actions,
          name="get_possible_actions"),
-    path('get-devices/', get_devices, name="get_devices"),
+    path('get-devices/<str:id>/', get_devices, name="get_devices"),
     path('token-auth/', TokenObtainPairView.as_view(), name='token_obtain_pair')
 ]
 # get_devices

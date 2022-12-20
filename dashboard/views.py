@@ -22,8 +22,7 @@ def get_possible_actions(request, *args, **kwargs):
 
 
 @api_view(['GET'])
-def get_devices(request, *args, **kwargs):
-    # print(request.DATA)
-    data = [i for i in Device.objects.all()]
+def get_devices(request, id, *args, **kwargs):
+    data = [i for i in Device.objects.all() if str(i.id) == str(id)]
     serializer = DevicesSerializer(data, many=True)
     return Response(serializer.data)
