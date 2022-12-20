@@ -26,12 +26,18 @@ class ActionAdmin(admin.ModelAdmin, ExportCsvMixin):
 
 
 class DeviceAdmin(admin.ModelAdmin, ExportCsvMixin):
-    list_display = ['device_name', 'phone', 'created_at']
+    list_display = ['device_name', 'phone', 'device_type', 'created_at']
+    actions = ["export_as_csv"]
+
+
+class DeviceTypeAdmin(admin.ModelAdmin, ExportCsvMixin):
+    list_display = ['device_type', 'created_at']
     actions = ["export_as_csv"]
 
 
 admin.site.register(Action, ActionAdmin)
 admin.site.register(Device, DeviceAdmin)
+admin.site.register(DeviceType, DeviceTypeAdmin)
 
 admin.site.site_header = "Devices Tracking"
 admin.site.site_title = "Devices Tracking Dashboard"
