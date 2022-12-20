@@ -19,3 +19,11 @@ def get_possible_actions(request, *args, **kwargs):
     data = Action.objects.all()
     serializer = ActionSerializer(data, many=True)
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+def get_devices(request, *args, **kwargs):
+    # print(request.DATA)
+    data = [i for i in Device.objects.all()]
+    serializer = DevicesSerializer(data, many=True)
+    return Response(serializer.data)
